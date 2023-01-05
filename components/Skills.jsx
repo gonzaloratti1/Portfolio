@@ -1,7 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
-import {html, css, javascript, material, firebase, git, mongo, nextjs, react, redux1, tailwind, ts} from "../public/skills"
-
+import {html} from "../public/skills/html.png"
+import {css} from "../public/skills/css.png"
+import {javascript} from "../public/skills/javascript.png"
+import {material} from "../public/skills/material.png"
+import {firebase} from "../public/skills/firebase.png"
+import {git} from "../public/skills/git.png"
+import {ts} from "../public/skills/ts.png"
+import {react} from "../public/skills/react.png"
+import {redux1} from "../public/skills/redux1.png"
+import {tailwind} from "../public/skills/tailwind.png"
 
 const Skills = () => {
     return (
