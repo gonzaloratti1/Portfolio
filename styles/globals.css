@@ -2,35 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
+    @apply transition-transform;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold
+  * {
+    @apply text-gray-900 tracking-wide dark:text-gray-50;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway]
+    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway] text-[#5651e5];
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl
-  }
-  
-  li {
-    @apply cursor-pointer
+    @apply text-3xl sm:text-4xl;
   }
 
-  button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white
+  li {
+    @apply cursor-pointer;
   }
+
+  #MuiButton {
+    @apply shadow-sm rounded-lg uppercase bg-gradient-to-r from-cyan-400 to-cyan-600 hover:bg-cyan-200 text-white dark:bg-gradient-to-r dark:from-[#BB86FC] dark:to-[#4e3179] py-2 px-4;
+  }
+
 }
+
+/* 
+#light {
+  background-color: #f3ebf6;
+  transition: all .25s ease;
+}
+
+#dark {
+  background-color: #0004 ;
+  transition: all .5s ease;
+}
+ */

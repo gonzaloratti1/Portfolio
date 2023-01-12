@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import propertyImg from '../public/assets/projects/property.jpg';
 import cryptoImg from '../public/assets/projects/crypto.jpg'
@@ -11,12 +9,13 @@ const Projects = () => {
   return (
     <div id='projects' className='w-full'>
       <div className='max-w-[1240px] mx-auto px-2 py-16'>
-        <p className='text-xl tracking-widest uppercase text-[#207178]'>
+        <p className='text-xl tracking-widest uppercase text-cyan-400 dark:text-[#BB86FC] font-extrabold'>
           Projects
         </p>
         <h2 className='py-4'>What I&apos;ve Built</h2>
-        <div className='grid md:grid-cols-2 gap-8'>
+        <div className='grid md:grid-cols-2 gap-8 bg-white dark:bg-[#121212] rounded-lg'>
           <ProjectItem
+            className="rounded-xl"
             title='Property Finder'
             backgroundImg={propertyImg}
             projectUrl='/property'

@@ -1,20 +1,43 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { useRouter } from 'next/router';
-import NavLogo from '../public/assets/navLogo.png'
-import GR1 from "../public/assets/GR1.png"
+import { useTheme } from "next-themes"
+import { SunIcon } from "@heroicons/react/solid";
+import { MoonIcon } from "@heroicons/react/solid";
+import Button from "@mui/material/Button"
+
 
 const Navbar = () => {
+
+  const { systemTheme, theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState('#ecf0f3');
   const [linkColor, setLinkColor] = useState('#1f2937');
-  // const [position, setPosition] = useState('fixed')
   const router = useRouter();
+
+
+  useEffect(() => {
+    setMounted(true)
+  }, []);
+
+  const renderThemeChanger = () => {
+    const currentTheme = theme === 'system' ? systemTheme : theme
+    if (currentTheme === "dark") {
+      return (
+        <SunIcon className="w-7 h-7" role="button" onClick={() => setTheme('light')} />
+      )
+    } else {
+      return (
+        <MoonIcon className="w-7 h-7" role="button" onClick={() => setTheme('dark')} />
+      )
+    }
+  }
 
   useEffect(() => {
     if (
@@ -26,7 +49,7 @@ const Navbar = () => {
       setNavBg('transparent');
       setLinkColor('#ecf0f3');
     } else {
-      setNavBg('#ecf0f3');
+      setNavBg('#000012 ');
       setLinkColor('#1f2937');
     }
   }, [router]);
@@ -55,49 +78,60 @@ const Navbar = () => {
           : 'fixed w-full h-20 z-[100]'
       }
     >
-      <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-        <Link href='/' legacyBehavior>
-          <a>
-            <Image
-              src={GR1}
-              alt='/'
-              width='125'
-              height='50'
-              className='cursor-pointer'
-            />
-          </a>
-        </Link>
-        <div>
-          <ul style={{ color: `${linkColor}` }} className='hidden md:flex'>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+      <div>
+        <div className='flex justify-between items-center w-full h-full px-1 2xl:px-14 bg-gray-50 dark:bg-[#121212]'>
+          <Link href='/' legacyBehavior>
+            <a>
+              <Image
+                src="/../public/assets/grpurple.png"
+                alt='/'
+                width='100'
+                height='50'
+                className='cursor-pointer'
+              />
+            </a>
+          </Link>
+        <div className='md:flex'>
+          <ul style={{ color: `${linkColor}` }} className='hidden md:flex mt-5'>
+            <li className='ml-10 text-sm uppercase hover:border-b hover:border-b-cyan-400 dark:hover:border-b-[#BB86FC]'>
               <Link href='/'>Home</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='ml-10 text-sm uppercase hover:border-b  hover:border-b-cyan-400 dark:hover:border-b-[#BB86FC]'>
               <Link href='/#about'>About</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='ml-10 text-sm uppercase hover:border-b  hover:border-b-cyan-400 dark:hover:border-b-[#BB86FC]'>
               <Link href='/#skills'>Skills</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='ml-10 text-sm uppercase hover:border-b  hover:border-b-cyan-400 dark:hover:border-b-[#BB86FC]'>
               <Link href='/#projects'>Projects</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='ml-10 text-sm uppercase hover:border-b  hover:border-b-cyan-400 dark:hover:border-b-[#BB86FC]  '>
               <Link href='/#contact'>Contact</Link>
             </li>
+            <li className='ml-10 -mt-2 text-sm uppercase  '>
+              <a>
+                <Button  id="MuiButton">
+                  Download CV
+                </Button>
+              </a>
+            </li>
+
+            <li className='ml-6 text-sm uppercase -mt-1  px-4'>
+              {renderThemeChanger()}
+            </li>
           </ul>
-          {/* Hamburger Icon */}
+          </div>
           <div
             style={{ color: `${linkColor}` }}
             onClick={handleNav}
             className='md:hidden'
           >
             <AiOutlineMenu size={25} />
+
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {/* Overlay */}
       <div
         className={
           nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
@@ -116,7 +150,7 @@ const Navbar = () => {
               <Link href='/' legacyBehavior>
                 <a>
                   <Image
-                    src={GR1}
+                    src="/../public/assets/grpurple.png"
                     width='87'
                     height='35'
                     alt='/'
@@ -125,7 +159,7 @@ const Navbar = () => {
               </Link>
               <div
                 onClick={handleNav}
-                className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'
+                className='rounded-full p-3 cursor-pointer'
               >
                 <AiOutlineClose />
               </div>
