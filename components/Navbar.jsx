@@ -17,7 +17,6 @@ const Navbar = () => {
   const [mounted, setMounted] = useState(false);
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState('#ecf0f3');
   const [linkColor, setLinkColor] = useState('#1f2937');
   const router = useRouter();
 
@@ -46,10 +45,9 @@ const Navbar = () => {
       router.asPath === '/netflix' ||
       router.asPath === '/twitch'
     ) {
-      setNavBg('transparent');
+      // setNavBg('transparent');
       setLinkColor('#ecf0f3');
     } else {
-      setNavBg('#000012 ');
       setLinkColor('#1f2937');
     }
   }, [router]);
@@ -71,26 +69,26 @@ const Navbar = () => {
 
   return (
     <div
-      style={{ backgroundColor: `${navBg}` }}
+      // style={{ backgroundColor: `${navBg}` }}
       className={
         shadow
           ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
           : 'fixed w-full h-20 z-[100]'
       }
     >
-      <div>
-        <div className='flex justify-between items-center w-full h-full px-1 2xl:px-14 bg-gray-50 dark:bg-[#121212]'>
-          <Link href='/' legacyBehavior>
-            <a>
-              <Image
-                src="/../public/assets/grpurple.png"
-                alt='/'
-                width='100'
-                height='50'
-                className='cursor-pointer'
-              />
-            </a>
-          </Link>
+
+      <div className='flex justify-between items-center w-full h-full px-1 2xl:px-14 dark:bg-[#121212] bg-[#fffffd] max-md:fixed'>
+        <Link href='/' legacyBehavior>
+          <a>
+            <Image
+              src="/../public/assets/grpurple.png"
+              alt='/'
+              width='100'
+              height='50'
+              className='cursor-pointer'
+            />
+          </a>
+        </Link>
         <div className='md:flex'>
           <ul style={{ color: `${linkColor}` }} className='hidden md:flex mt-5'>
             <li className='ml-10 text-sm uppercase hover:border-b hover:border-b-cyan-400 dark:hover:border-b-[#BB86FC]'>
@@ -110,7 +108,7 @@ const Navbar = () => {
             </li>
             <li className='ml-10 -mt-2 text-sm uppercase  '>
               <a>
-                <Button  id="MuiButton">
+                <Button id="MuiButton">
                   Download CV
                 </Button>
               </a>
@@ -120,28 +118,29 @@ const Navbar = () => {
               {renderThemeChanger()}
             </li>
           </ul>
-          </div>
+
+          {/* Mobile */}
           <div
             style={{ color: `${linkColor}` }}
             onClick={handleNav}
             className='md:hidden'
           >
+            {/* {renderThemeChanger()}   */}
             <AiOutlineMenu size={25} />
-
           </div>
         </div>
       </div>
 
       <div
         className={
-          nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
+          nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70 ' : ''
         }
       >
         {/* Side Drawer Menu */}
         <div
           className={
             nav
-              ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
+              ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500 dark:bg-[#121212]'
               : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
           }
         >
@@ -161,50 +160,53 @@ const Navbar = () => {
                 onClick={handleNav}
                 className='rounded-full p-3 cursor-pointer'
               >
-                <AiOutlineClose />
+
+                <AiOutlineClose className='dark:bg-["#121212"]' />
               </div>
+
             </div>
             <div className='border-b border-gray-300 my-4'>
-              <p className='w-[85%] md:w-[90%] py-4'>
+              <p className='w-[85%] md:w-[90%] py-4 dark:text-white'>
                 Let&#39;s build something legendary together
               </p>
+
             </div>
           </div>
           <div className='py-4 flex flex-col'>
             <ul className='uppercase'>
               <Link href='/'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm dark:text-white'>
                   Home
                 </li>
               </Link>
               <Link href='/#about'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm dark:text-white'>
                   About
                 </li>
               </Link>
               <Link href='/#skills'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm dark:text-white'>
                   Skills
                 </li>
               </Link>
               <Link href='/#projects'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm dark:text-white'>
                   Projects
                 </li>
               </Link>
               <Link href='/#main'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm dark:text-white'>
                   Resume
                 </li>
               </Link>
               <Link href='/#contact'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm dark:text-white'>
                   Contact
                 </li>
               </Link>
             </ul>
             <div className='pt-40'>
-              <p className='uppercase tracking-widest text-[#5651e5]'>
+              <p className='uppercase tracking-widest text-cyan-400  dark:text-[#BB86FC]'>
                 Let&#39;s Connect
               </p>
               <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
@@ -214,7 +216,7 @@ const Navbar = () => {
                   rel='noreferrer'
                 >
                   <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
-                    <FaLinkedinIn />
+                    <FaLinkedinIn className='dark:shadow-gray-50' />
                   </div>
                 </a>
                 <a
@@ -223,7 +225,7 @@ const Navbar = () => {
                   rel='noreferrer'
                 >
                   <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
-                    <FaGithub />
+                    <FaGithub className='dark:shadow-gray-50' />
                   </div>
                 </a>
                 <Link href='/#contact'>
@@ -231,7 +233,7 @@ const Navbar = () => {
                     onClick={() => setNav(!nav)}
                     className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'
                   >
-                    <AiOutlineMail />
+                    <AiOutlineMail className='dark:shadow-gray-50' />
                   </div>
                 </Link>
                 <Link href='/resume'>
@@ -239,9 +241,12 @@ const Navbar = () => {
                     onClick={() => setNav(!nav)}
                     className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'
                   >
-                    <BsFillPersonLinesFill />
+                    <BsFillPersonLinesFill className='dark:shadow-gray-50' />
                   </div>
                 </Link>
+                <li className='ml-6 text-sm uppercase -mt-1  px-4'>
+                  {renderThemeChanger()}
+                </li>
               </div>
             </div>
           </div>
