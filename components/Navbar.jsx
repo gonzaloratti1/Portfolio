@@ -9,7 +9,7 @@ import { useTheme } from "next-themes"
 import { SunIcon } from "@heroicons/react/solid";
 import { MoonIcon } from "@heroicons/react/solid";
 import Button from "@mui/material/Button"
-
+import grlogo from "../public/assets/grpurple.png"
 
 const Navbar = () => {
 
@@ -81,7 +81,7 @@ const Navbar = () => {
         <Link href='/' legacyBehavior>
           <a>
             <Image
-              src="/../public/assets/grpurple.png"
+              src={grlogo}
               alt='/'
               width='100'
               height='50'
