@@ -142,7 +142,7 @@ const Contact = () => {
                       required
                     ></textarea>
                   </div>
-                  <button className='w-full p-4 text-gray-100 mt-4 bg-cyan-600 hover:bg-cyan-400' type='submit' >
+                  <button className='w-full p-4 text-gray-100 mt-4 ' id='MuiButton' type='submit' >
                     Send Message
                   </button>
                   <div>
