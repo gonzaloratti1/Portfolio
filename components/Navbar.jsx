@@ -77,7 +77,7 @@ const Navbar = () => {
       }
     >
 
-      <div className='flex justify-between items-center w-full h-full px-1 2xl:px-14 dark:bg-[#121212] bg-[#fffffd] max-md:fixed'>
+      <div className='flex justify-between items-center w-full h-full px-1 2xl:px-14 dark:bg-[#121212] bg-[#fffffd]'>
         <Link href='/' legacyBehavior>
           <a>
             <Image
