@@ -16,7 +16,7 @@ const Contact = () => {
 
 
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
 
@@ -159,7 +159,7 @@ const Contact = () => {
                         </Typography>
                         {/* Boton para cerrar */}
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          Recibira su respuesta a la brevedad.
+                          Muchas gracias! Respondere a la brevedad.
                         </Typography>
                       </Box>
                     </Modal>

@@ -66,10 +66,10 @@ const property = () => {
                 <RiRadioButtonFill className='pr-1' /> Firebase
               </p>
               <p className='text-gray-600 py-2 flex items-center'>
-                <RiRadioButtonFill className='pr-1' /> Google API
+                <RiRadioButtonFill className='pr-1' /> Typescript
               </p>
               <p className='text-gray-600 py-2 flex items-center'>
-                <RiRadioButtonFill className='pr-1' /> Zillow API
+                <RiRadioButtonFill className='pr-1' /> Material UI
               </p>
             </div>
           </div>
