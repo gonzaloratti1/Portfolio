@@ -23,9 +23,7 @@ const About = () => {
             specific language, but choosing the best tool for the job.
           </p>
           <p className='py-2 text-gray-600  dark:text-white' >
-            I started web developement in 2013 managing multiple e-commerce
-            websites on CMS platforms such as WordPress, BigCommerce, and
-            Shopify. I have experience working directly with clients and taking
+            I have experience working directly with clients and taking
             mock wireframes all the way to deployed applications. In my spare
             time I run Code Commerce, a Youtube channel where I teach web
             developement and various front-end technologies.
