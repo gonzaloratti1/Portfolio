@@ -244,9 +244,9 @@ const Navbar = () => {
                     <BsFillPersonLinesFill className='dark:shadow-gray-50' />
                   </div>
                 </Link>
-                <li className='ml-6 text-sm uppercase -mt-1  px-4'>
+                {/* <li className='ml-6 text-sm uppercase -mt-1  px-4'>
                   {renderThemeChanger()}
-                </li>
+                </li> */}
               </div>
             </div>
           </div>
