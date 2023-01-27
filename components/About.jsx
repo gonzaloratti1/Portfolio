@@ -25,8 +25,7 @@ const About = () => {
           <p className='py-2 text-gray-600  dark:text-white' >
             I have experience working directly with clients and taking
             mock wireframes all the way to deployed applications. In my spare
-            time I run Code Commerce, a Youtube channel where I teach web
-            developement and various front-end technologies.
+            time I run Code Commerce.
           </p>
           <Link href='/#projects' legacyBehavior>
             <a className='py-2 dark:text-gray-200 underline cursor-pointer hover:text-cyan-400'>
