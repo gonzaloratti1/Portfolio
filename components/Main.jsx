@@ -8,7 +8,8 @@ const Main = () => {
     return (
         <div id='resume ' className='w-full h-screen text-center'>
             <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
-                {/* <div> */}
+                <div>
+
                     <h1 className='py-4 text-gray-700 dark:text-white'>Hi, i'm <span className='text-cyan-400 dark:text-[#BB86FC] font-extrabold'>Gonzalo</span></h1>
                     <h1 className='py-4 text-gray-700  dark:text-white'>
                         A front-end developer.
