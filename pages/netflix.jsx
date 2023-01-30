@@ -31,9 +31,6 @@ const netflix = () => {
             This app features user authentication with firebase as well as the
             firestore cloud storage database. This application is pulling movie
             data from an the IMDB movie API and displaying different categories.
-            It features horizontal sliding and a featured selection. The
-            useContext hook is also being implemented for app-wide state
-            management.
           </p>
           <a
             target='_blank'
